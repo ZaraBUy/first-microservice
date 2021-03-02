@@ -1,0 +1,3 @@
+example.property: I am the banman.
+server:
+  port: 8099

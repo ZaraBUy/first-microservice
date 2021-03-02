@@ -1,0 +1,26 @@
+
+server:
+  port: 8888
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ZaraBUy/microservicecloud-config
+          search-paths: licenseservice
+          username: 1046417966@qq.com
+          password: juvenile6613823
+  application:
+    name: config-server
