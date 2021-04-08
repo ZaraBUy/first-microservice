@@ -13,14 +13,11 @@ eureka:
 
 spring:
   profiles:
-    active: git
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/ZaraBUy/microservicecloud-config
-          search-paths: licenseservice
-          username: 1046417966@qq.com
-          password: juvenile6613823
+        native:
+          search-locations: classpath:config/,classpath:config/licenseservice, classpath:config/gateway-zuul
   application:
     name: config-server

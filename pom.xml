@@ -15,6 +15,8 @@
         <module>licenses-service</module>
         <module>organization-service</module>
         <module>config-server</module>
+        <module>gateway-zuul</module>
+        <module>redis-server</module>
     </modules>
 
     <parent>

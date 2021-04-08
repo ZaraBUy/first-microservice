@@ -1,5 +1,6 @@
 package com.zhoucx.microservice.licensesservice.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.zhoucx.microservice.licensesservice.client.OrganizationDiscoveryClient;
 import com.zhoucx.microservice.licensesservice.client.OrganizationFeignClient;
 import com.zhoucx.microservice.licensesservice.client.OrganizationRestTemplateClient;
@@ -9,6 +10,8 @@ import com.zhoucx.microservice.licensesservice.domain.Organization;
 import com.zhoucx.microservice.licensesservice.repository.LicenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class LicenseService {
@@ -62,6 +65,15 @@ public class LicenseService {
                 .withContactEmail( org.getContactEmail() )
                 .withContactPhone( org.getContactPhone() )
                 .withComment(serviceConfig.getExampleProperty());
+    }
+
+    public List<License> getLicensesByOrg(String organizationId){
+        try {
+            Thread.sleep(99999);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return licenseRepository.findByOrganizationId(organizationId);
     }
 
 }

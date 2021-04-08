@@ -18,6 +18,6 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:config/,classpath:config/licenseservice
+          search-locations: classpath:config/,classpath:config/licenseservice, classpath:config/gateway-zuul
   application:
     name: config-server
